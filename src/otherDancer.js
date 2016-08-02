@@ -4,9 +4,10 @@ var OtherDancer = function(top, left, timeBetweenSteps) {
 
   // MakeDancer.apply(this, arguments);
   MakeDancer.call(this, top, left, timeBetweenSteps);
-  // this.$node = $('<span class="other-dancer"></span>');
-  this.$node.addClass('new-dancer').prepend('<img src="http://bestanimations.com/Animals/Birds/Chickens/animated-chicken-rooster-gif-4.gif">');
-
+  this.$node = $('<span class="other-dancer"><img src="http://i.imgur.com/1rTzurl.gif"></span>');
+  // this.$node.addClass('new-dancer').prepend('<img src="http://bestanimations.com/Animals/Birds/Chickens/animated-chicken-rooster-gif-4.gif">');
+  this.step.call(this, timeBetweenSteps);
+  
 
   // we plan to overwrite the step function below, but we still want the superclass step behavior to work,
   // so we must keep a copy of the old version of this function
