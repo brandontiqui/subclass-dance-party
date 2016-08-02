@@ -2,9 +2,10 @@ var OtherDancer = function(top, left, timeBetweenSteps) {
   // var blinkyDancer = new MakeDancer(top, left, timeBetweenSteps);
 
 
-  MakeDancer.apply(this, arguments);
-  // MakeDancer.call(this, top, left, timeBetweenSteps);
-  this.$node = $('<span class="other-dancer"></span>');
+  // MakeDancer.apply(this, arguments);
+  MakeDancer.call(this, top, left, timeBetweenSteps);
+  // this.$node = $('<span class="other-dancer"></span>');
+  this.$node.addClass('other-dancer');
 
 
   // we plan to overwrite the step function below, but we still want the superclass step behavior to work,
@@ -14,7 +15,7 @@ var OtherDancer = function(top, left, timeBetweenSteps) {
 };
 
 OtherDancer.prototype = Object.create(MakeDancer.prototype);
-OtherDancer.prototype.constructor = MakeBlinkyDancer;
+OtherDancer.prototype.constructor = OtherDancer;
   
 OtherDancer.prototype.step = function(timeBetweenSteps) {
     // call the old version of step at the beginning of any call to this new version of step
