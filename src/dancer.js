@@ -4,7 +4,7 @@ var MakeDancer = function(top, left, timeBetweenSteps) {
   // var dancer = {};
 
   // use jQuery to create an HTML <span> tag
-  this.$node = $('<span class="dancer"></span>');
+  this.$node = $('<span class="dancer"><img src="http://cottonwoodvetclinic.com/wp-content/uploads/2015/03/image-nutro-small-dog-breeds-yorkshire-terrier.png"></span>');
 
   //this.timeBetweenSteps = timeBetweenSteps;
   this.setPosition(top, left);
