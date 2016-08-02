@@ -2,7 +2,10 @@ var NewDancer = function(top, left, timeBetweenSteps) {
   // var blinkyDancer = new MakeDancer(top, left, timeBetweenSteps);
   MakeDancer.apply(this, arguments);
   // this.$node = $('<span class="new-dancer"></span>');
-  this.$node.addClass('new-dancer');
+  // this.$node.addClass('new-dancer').prepend('<img src="https://media.giphy.com/media/5wJ8ZN7or1N1m/giphy.gif">');
+  this.$node = $('<span class="new-dancer"><img src="https://media.giphy.com/media/5wJ8ZN7or1N1m/giphy.gif"></span>');
+  
+  this.step.call(this, timeBetweenSteps);
 
   // we plan to overwrite the step function below, but we still want the superclass step behavior to work,
   // so we must keep a copy of the old version of this function
@@ -53,7 +56,7 @@ MakeDancer.prototype.move = function(top, left, width, transform) {
     rotateString = 'rotate(' + transform + 'deg)';
 
     top = top + 5;
-    left = left + 5;
+    left = left + 10;
     width = Math.random() + 5;
     // transform = rotateString;
     context.setPosition(top, left, width, rotateString);
