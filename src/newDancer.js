@@ -7,7 +7,8 @@ var NewDancer = function(top, left, timeBetweenSteps) {
   // we plan to overwrite the step function below, but we still want the superclass step behavior to work,
   // so we must keep a copy of the old version of this function
 
-  // this.oldStep = this.step;
+  // this.setPosition(100, 100);
+  this.move(100, 100); // start position
 };
 
 NewDancer.prototype = Object.create(MakeDancer.prototype);
@@ -27,4 +28,26 @@ NewDancer.prototype.step = function(timeBetweenSteps) {
   
 };
 
-  
+
+MakeDancer.prototype.setPosition = function(top, left) {
+  // Use css top and left properties to position our <span> tag
+  // where it belongs on the page. See http://api.jquery.com/css/
+  //
+  var styleSettings = {
+    top: top,
+    left: left
+  };
+  this.$node.css(styleSettings);
+};
+
+MakeDancer.prototype.move = function(top, left) {
+  // Use css top and left properties to position our <span> tag
+  // where it belongs on the page. See http://api.jquery.com/css/
+  //
+  var context = this;
+  setInterval(function() {
+    top = top + 5;
+    left = left + 5;
+    context.setPosition(top, left);
+  }, 1000);
+};
