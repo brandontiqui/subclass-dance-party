@@ -7,6 +7,9 @@ var MakeDancer = function(top, left, timeBetweenSteps) {
   this.$node = $('<span class="dancer"><img src="http://cottonwoodvetclinic.com/wp-content/uploads/2015/03/image-nutro-small-dog-breeds-yorkshire-terrier.png"></span>');
 
   //this.timeBetweenSteps = timeBetweenSteps;
+  this.top;
+  this.left;
+
   this.setPosition(top, left);
   this.step.call(this, timeBetweenSteps);
 
@@ -27,9 +30,19 @@ MakeDancer.prototype.setPosition = function(top, left) {
   // Use css top and left properties to position our <span> tag
   // where it belongs on the page. See http://api.jquery.com/css/
   //
+  this.top = top;
+  this.left = left;
+
   var styleSettings = {
     top: top,
     left: left
   };
   this.$node.css(styleSettings);
 };
+
+MakeDancer.prototype.getPosition = function() {
+  var array = [this.top, this.left];
+  return array;
+};
+
+

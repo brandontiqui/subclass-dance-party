@@ -1,6 +1,43 @@
 $(document).ready(function() {
   window.dancers = [];
 
+  // start stackoverflow functions
+  // http://stackoverflow.com/questions/17628456/measure-distance-between-two-html-elements-centers
+
+  /*************************
+  * ATTEMPT LATER
+  // var getPositionAtCenter = function (element) {
+  //   var data = element.getBoundingClientRect();
+  //   return {
+  //     x: data.left + data.width / 2,
+  //     y: data.top + data.height / 2
+  //   };
+  // };
+
+  // var getDistanceBetweenElements = function(a, b) {
+  //   var aPosition = getPositionAtCenter(a);
+  //   var bPosition = getPositionAtCenter(b);
+
+  //   return Math.sqrt(
+  //     Math.pow(aPosition.x - bPosition.x, 2) + 
+  //     Math.pow(aPosition.y - bPosition.y, 2) 
+  //   );
+  // };
+
+  // end stackoverflow functions
+
+  // for (var i = 0; i < window.dancers.length; i++) {
+
+  //   window.dancers[i].setPosition(500, horizontalPosition);
+  // }
+  ********************/
+
+  setInterval(function() {
+    for (var i = 0; i < window.dancers.length; i++) {
+      console.log(window.dancers[i].getPosition());
+    }
+  }, 1000);
+
   $('.addDancerButton').on('click', function(event) {
     /* This function sets up the click handlers for the create-dancer
      * buttons on dancefloor.html. You should only need to make one small change to it.

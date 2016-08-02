@@ -7,7 +7,8 @@ var OtherDancer = function(top, left, timeBetweenSteps) {
   this.$node = $('<span class="other-dancer"><img src="http://i.imgur.com/1rTzurl.gif"></span>');
   // this.$node.addClass('new-dancer').prepend('<img src="http://bestanimations.com/Animals/Birds/Chickens/animated-chicken-rooster-gif-4.gif">');
   this.step.call(this, timeBetweenSteps);
-  
+  this.top;
+  this.left;
 
   // we plan to overwrite the step function below, but we still want the superclass step behavior to work,
   // so we must keep a copy of the old version of this function
@@ -40,7 +41,8 @@ OtherDancer.prototype.move = function(top, left) {
 
   setInterval(function() {
     // top--;
-    left++;
+    this.top = top;
+    this.left = ++left;
     var styleSettings = {
       top: top,
       left: left

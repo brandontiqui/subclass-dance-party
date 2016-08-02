@@ -11,6 +11,8 @@ var NewDancer = function(top, left, timeBetweenSteps) {
   // so we must keep a copy of the old version of this function
 
   // this.setPosition(100, 100);
+  this.top;
+  this.left;
   this.move(100, 100, 1000, 180); // top, left, width, transform
 };
 
@@ -32,18 +34,18 @@ NewDancer.prototype.step = function(timeBetweenSteps) {
 };
 
 
-MakeDancer.prototype.setPosition = function(top, left, width, transform) {
-  // Use css top and left properties to position our <span> tag
-  // where it belongs on the page. See http://api.jquery.com/css/
-  //
-  var styleSettings = {
-    top: top,
-    left: left,
-    width: width,
-    transform: transform
-  };
-  this.$node.css(styleSettings);
-};
+// MakeDancer.prototype.setPosition = function(top, left, width, transform) {
+//   // Use css top and left properties to position our <span> tag
+//   // where it belongs on the page. See http://api.jquery.com/css/
+//   //
+//   var styleSettings = {
+//     top: top,
+//     left: left,
+//     width: width,
+//     transform: transform
+//   };
+//   this.$node.css(styleSettings);
+// };
 
 MakeDancer.prototype.move = function(top, left, width, transform) {
   // Use css top and left properties to position our <span> tag
