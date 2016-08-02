@@ -17,7 +17,7 @@ NewDancer.prototype.constructor = NewDancer;
 NewDancer.prototype.step = function(timeBetweenSteps) {
     // call the old version of step at the beginning of any call to this new version of step
   // this.oldStep();
-  this.$node.toggle();
+  this.$node.show();
   MakeDancer.prototype.step.call(this, timeBetweenSteps);
   
 
@@ -49,5 +49,5 @@ MakeDancer.prototype.move = function(top, left) {
     top = top + 5;
     left = left + 5;
     context.setPosition(top, left);
-  }, 1000);
+  }, Math.random() * 50);
 };
