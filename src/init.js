@@ -28,6 +28,8 @@ $(document).ready(function() {
       Math.random() * 1000
     );
     $('body').append(dancer.$node);
+
+    window.dancers.push(dancer);
   });
 
   $('.addNewDancerButton').on('click', function(event) {
@@ -57,6 +59,7 @@ $(document).ready(function() {
       Math.random() * 500
     );
     $('body').append(dancer.$node);
+    window.dancers.push(dancer);
   });
 
   $('.addOtherDancerButton').on('click', function(event) {
@@ -81,11 +84,25 @@ $(document).ready(function() {
     // make a dancer with a random position
 
     var dancer = new dancerMakerFunction(
-      $("body").height() * Math.random(),
-      $("body").width() * Math.random(),
+    $('body').height() * Math.random(),
+    $('body').width() * Math.random(),
       Math.random() * 500
     );
     $('body').append(dancer.$node);
+    window.dancers.push(dancer);
+  });
+
+  $('.lineUpButton').on('click', function(event) {
+    var horizontalPosition = 0;
+    console.log(window.dancers.length);
+    for (var i = 0; i <= 99999; i++) {
+      window.clearInterval(i);
+    }
+    for (var i = 0; i < window.dancers.length; i++) {
+      horizontalPosition += 50;
+      window.dancers[i].setPosition(500, horizontalPosition);
+    }
+    // console.log(window.dancers.length);
   });
 });
 
