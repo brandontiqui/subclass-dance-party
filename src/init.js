@@ -32,11 +32,17 @@ $(document).ready(function() {
   // }
   ********************/
 
-  setInterval(function() {
-    for (var i = 0; i < window.dancers.length; i++) {
-      console.log(window.dancers[i].getPosition());
-    }
-  }, 1000);
+  // setInterval(function() {
+  //   // for (var i = 0; i < window.dancers.length; i++) {
+  //   //   var position = window.dancers[i].getPosition();
+  //   //   for (var j = i + 1; j < window.dancers.length; j++) {
+  //   //     var position = window.dancers[j].getPosition();
+  //   //   }
+
+
+  //   // }
+  //   console.log(window.dancers[1].getPosition());
+  // }, 1000);
 
   $('.addDancerButton').on('click', function(event) {
     /* This function sets up the click handlers for the create-dancer
