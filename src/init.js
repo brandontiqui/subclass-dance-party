@@ -72,10 +72,12 @@ $(document).ready(function() {
 
     $('body').append(dancer.$node);
 
-    $('.dog').on('click', function(event) {
+    $('.dog').on('mouseover', function(event) {
     // $(event.target).toggle('explode');
-      console.log('a');
-      $(this).hide();
+      $(this).toggle("bounce");
+      // this.setPosition(0, 0);
+      // var context = jQuery_object[0];
+      // context.setPosition(0, 0);
     });
 
     window.dancers.push(dancer);
@@ -109,6 +111,11 @@ $(document).ready(function() {
     );
 
     $('body').append(dancer.$node);
+    // $('.new-dancer').on('click', function(event) {
+      
+    //   console.log('b');
+    //   $(this).hide();
+    // });
     window.dancers.push(dancer);
   });
 
@@ -139,6 +146,13 @@ $(document).ready(function() {
       Math.random() * 500
     );
     $('body').append(dancer.$node);
+
+    // $('.other-dancer').on('click', function(event) {
+    
+    //   console.log('a');
+    //   $(this).hide();
+    // });
+
     window.dancers.push(dancer);
   });
 
