@@ -62,5 +62,5 @@ MakeDancer.prototype.move = function(top, left, width, transform) {
     width = Math.random() + 5;
     // transform = rotateString;
     context.setPosition(top, left, width, rotateString);
-  }, Math.random() * 50);
+  }, 500);
 };
