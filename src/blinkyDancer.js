@@ -13,7 +13,7 @@ MakeBlinkyDancer.prototype.constructor = MakeBlinkyDancer;
 MakeBlinkyDancer.prototype.step = function(timeBetweenSteps) {
     // call the old version of step at the beginning of any call to this new version of step
   // this.oldStep();
-  this.$node.toggle();
+  this.$node.show();
   MakeDancer.prototype.step.call(this, timeBetweenSteps);
   
 

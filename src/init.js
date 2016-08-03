@@ -33,15 +33,14 @@ $(document).ready(function() {
   ********************/
 
   // setInterval(function() {
-  //   // for (var i = 0; i < window.dancers.length; i++) {
-  //   //   var position = window.dancers[i].getPosition();
-  //   //   for (var j = i + 1; j < window.dancers.length; j++) {
-  //   //     var position = window.dancers[j].getPosition();
-  //   //   }
-
-
-  //   // }
-  //   console.log(window.dancers[1].getPosition());
+  //   for (var i = 0; i < window.dancers.length; i++) {
+  //     var position = window.dancers[i].getPosition();
+  //     for (var j = i + 1; j < window.dancers.length; j++) {
+  //       var otherPosition = window.dancers[j].getPosition();
+  //       var topDifference = position[0] - otherPosition[0];
+  //       console.log(topDifference);
+  //     }
+  //   }
   // }, 1000);
 
   $('.addDancerButton').on('click', function(event) {
@@ -70,7 +69,14 @@ $(document).ready(function() {
       $("body").width() * Math.random(),
       Math.random() * 1000
     );
+
     $('body').append(dancer.$node);
+
+    $('.dog').on('click', function(event) {
+    // $(event.target).toggle('explode');
+      console.log('a');
+      $(this).hide();
+    });
 
     window.dancers.push(dancer);
   });
@@ -101,6 +107,7 @@ $(document).ready(function() {
       $("body").width() * Math.random(),
       Math.random() * 500
     );
+
     $('body').append(dancer.$node);
     window.dancers.push(dancer);
   });
@@ -147,5 +154,7 @@ $(document).ready(function() {
     }
     // console.log(window.dancers.length);
   });
+
+
 });
 
